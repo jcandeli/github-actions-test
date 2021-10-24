@@ -1,0 +1,9 @@
+// Our babel configuration.
+// Plugins are individual functions/transforms for JS. Presets are bundles of plugins.
+// We use presets for React and general ES6 features via `preset-env`
+// We don't currently target and specific browsers
+// `plugin-transform-runtime` allows for the use of Generator functions in Sagas
+{
+  "presets": ["@babel/react", "@babel/preset-env"],
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
