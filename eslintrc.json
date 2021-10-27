@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "plugins": ["jest", "jsx-a11y"],
+  "extends": ["airbnb"],
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ]
+  },
+  "parser": "@babel/eslint-parser"
+}
