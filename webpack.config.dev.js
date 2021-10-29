@@ -4,10 +4,11 @@ const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const InterpolateHtmlPlugin = require("interpolate-html-plugin");
+const paths = require("./paths");
 const pckg = require("./package.json");
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
-const publicPath = "/";
+const publicPath = "./src";
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
@@ -26,15 +27,10 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     port: 3000,
-    https: {
-      cert: fs.readFileSync("../STAR.dev.chownow.com.ca-bundle"),
-      key: fs.readFileSync("../dev.chownow.com.key"),
-    },
-    host: "web.dev.chownow.com",
   },
   devtool: "inline-source-map",
   mode: "development",
-  entry: ["App.js"],
+  entry: [`${paths.appSrc}/components/App.jsx`],
   output: {
     filename: "static/js/bundle.js",
     publicPath,
@@ -108,5 +104,4 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
-  externals: commonConfig.externals,
 };
