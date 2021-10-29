@@ -1,21 +1,12 @@
 name: Code Climate
+# Only trigger, when the build workflow succeeded
 on:
-  push:
-    branches:
-      - master
-    tags:
-      - "!*" # Do not execute on tags
-    paths:
-      - src/*
-      - test/*
-      - "*.json"
-      - yarn.lock
-  pull_request:
-    branches: "**"
+  workflow_run:
+    workflows: ["Jest"]
+    types:
+      - completed
 jobs:
-  needs: [jest]
   coverage:
-    needs: [test]
     name: coverage
     runs-on: ubuntu-latest
     steps:
