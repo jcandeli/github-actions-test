@@ -70,6 +70,7 @@
         "react-dom": "^17.0.2"
     },
     "scripts": {
+        "build": "NODE_ENV=development DEPLOY_ENV=development webpack build --config webpack.config.dev.js",
         "start": "NODE_ENV=development DEPLOY_ENV=development webpack serve --config webpack.config.dev.js",
         "style-lint": "stylelint 'src/**/*.scss'",
         "prepare": "husky install",
