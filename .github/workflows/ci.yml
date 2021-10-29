@@ -14,17 +14,12 @@ on:
     branches: "**"
 jobs:
   test:
-    strategy:
-      matrix:
-        platform: [ubuntu-latest, macOS-latest]
-        node: ["12", "10"]
-    name: test/node ${{ matrix.node }}/${{ matrix.platform }}
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16
       - run: npm install -g yarn
       - run: yarn install
       - run: yarn build
@@ -37,7 +32,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "12"
+          node-version: "16"
       - run: npm install -g yarn
       - run: yarn install
       - run: yarn build
