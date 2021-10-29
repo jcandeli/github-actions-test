@@ -1,5 +1,4 @@
 name: Code Climate
-# Only trigger, when the build workflow succeeded
 on:
   workflow_run:
     workflows: ["Jest"]
