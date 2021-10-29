@@ -11,8 +11,7 @@ on:
       - "*.json"
       - yarn.lock
   pull_request:
-    paths:
-      - "!*.MD"
+    branches: "**"
 jobs:
   test:
     strategy:
