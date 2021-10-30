@@ -15,7 +15,6 @@ jobs:
         with:
           node-version: "16"
       - run: npm ci
-      - run: npm run build
       - uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: 364926f5c25fddd78398e0546e35c8e4942783b57b8846ebb0660bf05a066d1d
