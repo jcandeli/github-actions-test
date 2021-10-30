@@ -1,7 +1,8 @@
 name: Code Climate
 on:
   workflow_run:
-    workflows: ["Jest"]
+    workflows:
+      - "Test"
     types:
       - completed
 jobs:
