@@ -15,14 +15,13 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: '12'
-    - run: npm install -g yarn
-    - run: yarn install
-    - run: yarn build
+    - run: npm ci
+    - run: npm run build
     - uses: paambaati/codeclimate-action@v3.0.0
       env:
         CC_TEST_REPORTER_ID: 364926f5c25fddd78398e0546e35c8e4942783b57b8846ebb0660bf05a066d1d
       with:
-        coverageCommand: yarn coverage
+        coverageCommand: npm run coverage
         coverageLocations: |
           ${{github.workspace}}/coverage/clover.xml:clover
         debug: true
