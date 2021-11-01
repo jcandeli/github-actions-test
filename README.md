@@ -2,4 +2,4 @@
 
 Learning how to use github actions
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/b7e6dd16f0c9616587df/test_coverage)](https://codeclimate.com/github/gitlabhq/gitlab-ci/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/c018eb6536303489ff2c/test_coverage)](https://codeclimate.com/github/jcandeli/github-actions-test/test_coverage)
