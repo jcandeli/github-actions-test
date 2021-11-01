@@ -42,5 +42,5 @@ jobs:
       with:
         coverageCommand: yarn coverage
         coverageLocations: |
-          ${{github.workspace}}/coverage/coverage-final.json:lcov-json
+          ${{github.workspace}}/coverage/clover.xml:clover
         debug: true
